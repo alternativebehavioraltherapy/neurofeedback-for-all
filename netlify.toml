@@ -1,0 +1,19 @@
+# Free hosting on Netlify for neurofeedbackforall.com
+# Nitro (TanStack Start) writes static files to `dist/` and server functions
+# to `.netlify/functions-internal/` automatically when NETLIFY=1.
+
+[build]
+  command = "npm run build:netlify"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NETLIFY = "1"
+
+# Netlify Forms + security headers (static files)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
