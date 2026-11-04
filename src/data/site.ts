@@ -7,18 +7,24 @@ export const site = {
   phone: "(360) 553-1350",
   phoneHref: "tel:+13605531350",
   email: "office@altbehtherapy.com",
-  emailHref: "mailto:office@altbehtherapy.com",
-  askAbout: "Ask about NeurOptimal.",
+  emailHref:
+    "mailto:office@altbehtherapy.com?subject=NeurOptimal%20inquiry",
+  /** Shared office inbox — mention NeurOptimal so the message is routed */
+  formEmail: "office@altbehtherapy.com",
+  inquireAbout: "NeurOptimal",
   address: {
     line1: "3000 SE 164th Ave, Suite 108",
     city: "Vancouver, WA 98683",
     full: "3000 SE 164th Ave, Suite 108, Vancouver, WA 98683",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=3000+SE+164th+Ave+Suite+108+Vancouver+WA+98683",
   },
   social: {
     facebook: "https://www.facebook.com/brainbalancenw",
     linkedin: "https://www.linkedin.com/company/brain-balance-northwest-llc",
     twitter: "https://x.com/brain_northwest",
-    email: "mailto:office@altbehtherapy.com",
+    email:
+      "mailto:office@altbehtherapy.com?subject=NeurOptimal%20inquiry",
   },
   owner: {
     name: "Joshua Moore",
