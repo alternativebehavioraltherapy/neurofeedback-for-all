@@ -3,7 +3,8 @@ import { ExternalLink, PlayCircle } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/Seo";
-import { site, videos } from "@/data/site";
+import { SiteImage } from "@/components/SiteImage";
+import { videos } from "@/data/site";
 
 export const Route = createFileRoute("/information")({
   component: InformationPage,
@@ -55,10 +56,12 @@ function InformationPage() {
           </div>
           <aside className="lg:col-span-5">
             <div className="surface-card overflow-hidden">
-              <img
+              <SiteImage
                 src="/session-4.jpg"
                 alt="Neurofeedback sensors and home training setup"
-                className="aspect-[16/11] w-full object-cover"
+                width={1600}
+                height={1100}
+                className="shot-wide aspect-[16/11] w-full object-cover"
               />
               <div className="p-5 md:p-6">
                 <h3 className="font-display text-xl">Our approach: NeurOptimal</h3>
@@ -102,7 +105,7 @@ function InformationPage() {
           <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {videos.map((video) => (
               <article key={video.id} className="surface-card overflow-hidden">
-                <div className="relative aspect-video bg-[var(--color-bg-ink)]">
+                <div className="frame-video relative aspect-video bg-[var(--color-bg-ink)]">
                   <iframe
                     title={video.title}
                     src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0&modestbranding=1`}
@@ -138,8 +141,9 @@ function InformationPage() {
               Ready to rent?
             </h2>
             <p className="mt-3 text-[var(--color-fg-muted)] leading-relaxed">
-              Contact us by phone or email about a monthly unlimited home
-              rental. {site.askAbout}
+              Explore the research above, then contact us about a monthly
+              unlimited home rental. We ship systems and help you get set up for
+              training on your own schedule.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
@@ -147,7 +151,7 @@ function InformationPage() {
               <Link to="/contact">Ask about rentals</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href={site.phoneHref}>Call {site.phone}</a>
+              <a href="tel:+13602092140">Call us</a>
             </Button>
           </div>
         </div>

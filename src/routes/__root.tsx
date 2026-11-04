@@ -4,9 +4,10 @@ import {
   Scripts,
   createRootRoute,
 } from "@tanstack/react-router";
+import appCss from "../styles.css?url";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import appCss from "../styles.css?url";
+import { criticalCss } from "@/critical-css";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -54,6 +55,7 @@ function RootComponent() {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
         <HeadContent />
       </head>
       <body>

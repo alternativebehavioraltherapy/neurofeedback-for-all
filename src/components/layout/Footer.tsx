@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { SiteImage } from "@/components/SiteImage";
 import { navLinks, site } from "@/data/site";
 
 function XIcon({ className }: { className?: string }) {
@@ -18,10 +19,12 @@ export function Footer() {
       <div className="container-page grid gap-10 py-12 md:grid-cols-12 md:gap-8 md:py-16">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3">
-            <img
+            <SiteImage
               src="/logo-transparent.png"
               alt=""
-              className="h-12 w-12 rounded-full bg-[var(--color-bg-elevated)] object-contain p-1"
+              width={48}
+              height={48}
+              className="mark-footer h-12 w-12 rounded-full bg-[var(--color-bg-elevated)] object-contain p-1"
             />
             <div>
               <div className="font-display text-lg font-semibold tracking-tight">

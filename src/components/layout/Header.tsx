@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, Phone, X } from "lucide-react";
 import { navLinks, site } from "@/data/site";
+import { SiteImage } from "@/components/SiteImage";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +18,13 @@ export function Header() {
           className="flex min-w-0 items-center gap-2.5 focus-ring rounded-[var(--radius-sm)]"
           onClick={() => setOpen(false)}
         >
-          <img
+          <SiteImage
             src="/logo-transparent.png"
             alt={`${site.name} logo`}
-            className="h-10 w-10 shrink-0 object-contain md:h-11 md:w-11"
+            width={44}
+            height={44}
+            priority
+            className="mark mark-lg h-10 w-10 shrink-0 object-contain md:h-11 md:w-11"
           />
           <div className="min-w-0 leading-tight">
             <div className="truncate font-display text-[0.95rem] font-semibold tracking-tight text-[var(--color-fg)] md:text-base">

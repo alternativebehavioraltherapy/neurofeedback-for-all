@@ -9,9 +9,19 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/Seo";
+import { SiteImage } from "@/components/SiteImage";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: "/session-1.jpg",
+      },
+    ],
+  }),
   component: HomePage,
 });
 
@@ -43,12 +53,15 @@ function HomePage() {
     <>
       <Seo title="Home" description={site.description} />
 
-      <section className="relative overflow-hidden border-b border-[var(--color-border)]">
-        <div className="absolute inset-0">
-          <img
+      <section className="hero relative overflow-hidden border-b border-[var(--color-border)]">
+        <div className="fill-frame absolute inset-0">
+          <SiteImage
             src="/session-1.jpg"
             alt=""
-            className="h-full w-full object-cover"
+            width={1200}
+            height={800}
+            priority
+            className="fill-cover h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(105deg,rgb(15_28_40_/_0.88)_0%,rgb(15_28_40_/_0.72)_48%,rgb(15_28_40_/_0.45)_100%)]" />
         </div>
@@ -153,15 +166,19 @@ function HomePage() {
       <section className="border-y border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
         <div className="container-page grid gap-8 py-14 md:grid-cols-2 md:items-center md:gap-12 md:py-20">
           <div className="grid grid-cols-2 gap-3">
-            <img
+            <SiteImage
               src="/session-2.jpg"
               alt="Neurofeedback system ready for home training"
-              className="aspect-[4/5] rounded-[var(--radius-xl)] object-cover shadow-[var(--shadow-md)]"
+              width={800}
+              height={1000}
+              className="shot-45 aspect-[4/5] rounded-[var(--radius-xl)] object-cover shadow-[var(--shadow-md)]"
             />
-            <img
+            <SiteImage
               src="/session-3.jpg"
               alt="Person using a neurofeedback rental system"
-              className="mt-8 aspect-[4/5] rounded-[var(--radius-xl)] object-cover shadow-[var(--shadow-md)]"
+              width={800}
+              height={1000}
+              className="shot-45 mt-8 aspect-[4/5] rounded-[var(--radius-xl)] object-cover shadow-[var(--shadow-md)]"
             />
           </div>
           <div>
@@ -206,10 +223,12 @@ function HomePage() {
       <section className="container-page py-14 md:py-20">
         <div className="surface-card overflow-hidden md:grid md:grid-cols-12">
           <div className="md:col-span-4">
-            <img
+            <SiteImage
               src={site.owner.photo}
               alt={site.owner.name}
-              className="h-full max-h-80 w-full object-cover object-top md:max-h-none"
+              width={600}
+              height={800}
+              className="shot-owner h-full max-h-80 w-full object-cover object-top md:max-h-none"
             />
           </div>
           <div className="flex flex-col justify-center p-6 md:col-span-8 md:p-10 lg:p-12">
