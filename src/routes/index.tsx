@@ -87,7 +87,7 @@ function HomePage() {
               >
                 {site.phone}
               </a>{" "}
-              · {site.address.city}
+              · {site.askAbout}
             </p>
           </div>
 
@@ -245,7 +245,7 @@ function HomePage() {
               Ready to rent a system?
             </h2>
             <p className="mt-2 max-w-xl text-[var(--color-fg-on-ink-muted)]">
-              Reach out by phone, email, or the contact form. We will help you
+              Reach out by phone or email. {site.askAbout} We will help you
               get started with a monthly unlimited rental plan.
             </p>
           </div>

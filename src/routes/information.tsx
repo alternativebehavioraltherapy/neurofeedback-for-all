@@ -3,7 +3,7 @@ import { ExternalLink, PlayCircle } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/Seo";
-import { videos } from "@/data/site";
+import { site, videos } from "@/data/site";
 
 export const Route = createFileRoute("/information")({
   component: InformationPage,
@@ -138,9 +138,8 @@ function InformationPage() {
               Ready to rent?
             </h2>
             <p className="mt-3 text-[var(--color-fg-muted)] leading-relaxed">
-              Explore the research above, then contact us about a monthly
-              unlimited home rental. We ship systems and help you get set up for
-              training on your own schedule.
+              Contact us by phone or email about a monthly unlimited home
+              rental. {site.askAbout}
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row md:justify-end">
@@ -148,7 +147,7 @@ function InformationPage() {
               <Link to="/contact">Ask about rentals</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href="tel:+13602092140">Call us</a>
+              <a href={site.phoneHref}>Call {site.phone}</a>
             </Button>
           </div>
         </div>
