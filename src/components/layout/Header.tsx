@@ -112,7 +112,7 @@ export function Header() {
               className="rounded-[var(--radius-md)] px-3.5 py-3 text-base font-medium text-[var(--color-fg-muted)]"
               onClick={() => setOpen(false)}
             >
-              Call {site.phone}
+              Call {site.phone} — inquire about {site.inquireAbout}
             </a>
             <div className="px-1 pt-1 pb-2">
               <Button asChild className="w-full">
