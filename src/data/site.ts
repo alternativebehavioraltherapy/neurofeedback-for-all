@@ -4,24 +4,21 @@ export const site = {
   tagline: "Accessible neurofeedback rentals for everyone",
   description:
     "Home neurofeedback system rentals from Neuro Balance NW in Vancouver, WA. Unlimited sessions, flexible monthly plans, and low-income rates available.",
-  phone: "(360) 209-2140",
-  phoneHref: "tel:+13602092140",
-  email: "Lynda@Neurofeedbackforall.com",
-  emailHref: "mailto:Lynda@Neurofeedbackforall.com",
-  /** Free form delivery via FormSubmit → this inbox */
-  formEmail: "Lynda@Neurofeedbackforall.com",
+  phone: "(360) 553-1350",
+  phoneHref: "tel:+13605531350",
+  email: "office@altbehtherapy.com",
+  emailHref: "mailto:office@altbehtherapy.com",
+  askAbout: "Ask about NeurOptimal.",
   address: {
     line1: "3000 SE 164th Ave, Suite 108",
     city: "Vancouver, WA 98683",
     full: "3000 SE 164th Ave, Suite 108, Vancouver, WA 98683",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=3000+SE+164th+Ave+Suite+108+Vancouver+WA+98683",
   },
   social: {
     facebook: "https://www.facebook.com/brainbalancenw",
     linkedin: "https://www.linkedin.com/company/brain-balance-northwest-llc",
     twitter: "https://x.com/brain_northwest",
-    email: "mailto:Lynda@Neurofeedbackforall.com",
+    email: "mailto:office@altbehtherapy.com",
   },
   owner: {
     name: "Joshua Moore",

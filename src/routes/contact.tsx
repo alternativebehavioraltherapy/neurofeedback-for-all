@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { Seo } from "@/components/Seo";
@@ -14,12 +14,12 @@ function ContactPage() {
     <>
       <Seo
         title="Contact Us"
-        description="Contact Neurofeedback For All about home neurofeedback system rentals in Vancouver, WA."
+        description="Call or email Neurofeedback For All about NeurOptimal home rentals."
       />
       <PageHero
         eyebrow="Contact us"
-        title="Inquire about a rental"
-        description="Tell us about your needs — monthly unlimited rentals, shipping, or low-income rates. We will get back to you promptly."
+        title="Call or email"
+        description="Phone and email are the only ways to reach us. Ask about NeurOptimal so the office can route you."
       />
 
       <section className="container-page py-12 md:py-16">
@@ -29,19 +29,22 @@ function ContactPage() {
               Reach us directly
             </h2>
             <p className="mt-2 text-center text-sm text-[var(--color-fg-muted)]">
-              Call or email — we respond promptly to rental inquiries.
+              {site.askAbout}
             </p>
             <ul className="mt-8 space-y-5 text-sm">
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-primary)]" />
                 <div>
-                  <p className="font-medium text-[var(--color-fg)]">Main line</p>
+                  <p className="font-medium text-[var(--color-fg)]">Phone</p>
                   <a
                     href={site.phoneHref}
                     className="text-[var(--color-fg-muted)] hover:text-[var(--color-primary)]"
                   >
                     {site.phone}
                   </a>
+                  <p className="mt-1 text-xs text-[var(--color-fg-subtle)]">
+                    {site.askAbout}
+                  </p>
                 </div>
               </li>
               <li className="flex gap-3">
@@ -54,26 +57,8 @@ function ContactPage() {
                   >
                     {site.email}
                   </a>
-                </div>
-              </li>
-              <li className="flex gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-primary)]" />
-                <div>
-                  <p className="font-medium text-[var(--color-fg)]">
-                    Mailing address
-                  </p>
-                  <a
-                    href={site.address.mapsUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[var(--color-fg-muted)] hover:text-[var(--color-primary)]"
-                  >
-                    {site.address.line1}
-                    <br />
-                    {site.address.city}
-                  </a>
                   <p className="mt-1 text-xs text-[var(--color-fg-subtle)]">
-                    Home rental systems ship nationwide (shipping extra)
+                    {site.askAbout}
                   </p>
                 </div>
               </li>
@@ -86,11 +71,6 @@ function ContactPage() {
                 <a href={site.emailHref}>Email us</a>
               </Button>
             </div>
-            <Button asChild variant="ghost" className="mt-3 w-full">
-              <a href={site.address.mapsUrl} target="_blank" rel="noreferrer">
-                Get directions
-              </a>
-            </Button>
           </div>
 
           <div className="rounded-[var(--radius-xl)] border border-[var(--color-border)] bg-[var(--color-primary-soft)] p-5 text-center md:p-6">
@@ -101,7 +81,7 @@ function ContactPage() {
               <strong className="font-semibold text-[var(--color-fg)]">
                 $500 / month + shipping
               </strong>
-              . Train at home on your schedule. Ask about low-income rates.
+              . Train at home on your schedule. {site.askAbout}
             </p>
           </div>
         </div>

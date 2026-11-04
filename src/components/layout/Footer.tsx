@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone } from "lucide-react";
 import { navLinks, site } from "@/data/site";
 
 function XIcon({ className }: { className?: string }) {
@@ -97,20 +97,10 @@ export function Footer() {
           <h2 className="text-sm font-semibold tracking-wide text-[var(--color-fg-on-ink)] uppercase">
             Contact
           </h2>
+          <p className="mt-4 text-sm text-[var(--color-fg-on-ink-muted)]">
+            {site.askAbout}
+          </p>
           <ul className="mt-4 space-y-3 text-sm text-[var(--color-fg-on-ink-muted)]">
-            <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-primary)]" />
-              <a
-                href={site.address.mapsUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[var(--color-fg-on-ink)]"
-              >
-                {site.address.line1}
-                <br />
-                {site.address.city}
-              </a>
-            </li>
             <li className="flex gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-primary)]" />
               <a href={site.phoneHref} className="hover:text-[var(--color-fg-on-ink)]">
